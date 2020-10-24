@@ -3,7 +3,21 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.cm import get_cmap
 
+st.beta_set_page_config(page_title="Research projects widget",initial_sidebar_state='expanded')
 st.title('Resarch projects')
+
+explanation = """
+This widget is a simple way to show the potential impact of research projects.
+You can use the sidebar to adjust your estimates of the likely impact of different
+projects on the capabilities of assistants built with Rasa (i.e. what the most advanced
+teams can build) and Rasa's ease of use (i.e. how many teams are able to build with Rasa).
+You can also estimate the difficulty/ uncertainty of each project. Higher-risk projects
+are shown in a lighter colour on the plot.
+
+The hope is that in aggregate we can get a feel for how we are investing our time.
+"""
+
+st.text(explanation)
 
 projects = {
     "end to end": {'effort': 10, 'capabilities':80, 'difficulty': 80},
@@ -40,7 +54,7 @@ ax.set_xlim(0,100)
 ax.set_ylim(0,100)
 ax.set_xticks([])
 ax.set_yticks([])
-ax.set_xlabel("Capabilities of assistants")
-ax.set_ylabel("Effort to build")
+ax.set_xlabel("Capabilities of assistants built with Rasa")
+ax.set_ylabel("Ease of use of Rasa")
 
 st.pyplot(fig)
