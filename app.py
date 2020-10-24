@@ -30,8 +30,8 @@ project_name = st.sidebar.selectbox(
     list(projects.keys())
 )
 
-effort = st.sidebar.slider('effort', 0, 100, projects[project_name]['effort'])
-capabilities = st.sidebar.slider('capabilities', 0, 100, projects[project_name]['capabilities'])
+effort = st.sidebar.slider('will make Rasa easier to use', 0, 100, projects[project_name]['effort'])
+capabilities = st.sidebar.slider('will increase capabilities', 0, 100, projects[project_name]['capabilities'])
 difficulty = st.sidebar.slider('difficulty', 0, 100, projects[project_name]['difficulty'])
 
 ## update dict with new slider vals, if edited
